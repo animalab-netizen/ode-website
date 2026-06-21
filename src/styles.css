@@ -127,6 +127,12 @@ a {
   margin-top: 28px;
 }
 
+.hero-support {
+  max-width: 56ch;
+  color: var(--muted);
+  font: 600 1rem/1.7 "Avenir Next", "Segoe UI", sans-serif;
+}
+
 .button {
   padding: 14px 18px;
   border-radius: 999px;
@@ -207,11 +213,19 @@ a {
 }
 
 .narrative-grid,
+.value-grid,
 .library-grid,
 .example-grid,
-.status-board {
+.status-board,
+.highlight-list,
+.contact-grid {
   display: grid;
   gap: 18px;
+}
+
+.value-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
 }
 
 .narrative-grid {
@@ -219,10 +233,37 @@ a {
 }
 
 .narrative-card,
+.value-card,
 .library-card,
 .example-card,
-.status-column {
+.status-column,
+.highlight-item,
+.contact-card {
   padding: 24px;
+}
+
+.value-card,
+.highlight-item,
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.value-card h2,
+.contact-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.7rem;
+}
+
+.value-card p,
+.highlight-item p,
+.contact-card li,
+.contact-card a,
+.contact-card span {
+  color: var(--muted);
+  font: 500 1rem/1.7 "Avenir Next", "Segoe UI", sans-serif;
 }
 
 .section {
@@ -236,6 +277,10 @@ a {
 
 .section-heading h2 {
   font-size: clamp(2.2rem, 4vw, 4.3rem);
+}
+
+.highlight-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .library-grid {
@@ -327,6 +372,41 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-list,
+.community-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.contact-list li,
+.community-list li {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.contact-list li:first-child,
+.community-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.contact-list span {
+  display: block;
+  color: var(--accent);
+  font: 700 0.76rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contact-list a:hover {
+  color: var(--accent);
+}
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -354,10 +434,13 @@ a {
 @media (max-width: 1080px) {
   .hero,
   .narrative-grid,
+  .value-grid,
   .library-grid,
   .docs-layout .docs-shell,
   .example-grid,
-  .status-board {
+  .status-board,
+  .highlight-list,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 

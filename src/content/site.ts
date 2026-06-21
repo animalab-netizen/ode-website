@@ -134,3 +134,42 @@ export const examples = [
     emphasis: 'Lightweight example of ODE orchestration in backend-friendly Python.',
   },
 ]
+
+export const valueProps = [
+  {
+    title: 'Native by design',
+    body: 'Every runtime is written for its own ecosystem instead of wrapping a hidden cross-platform core.',
+  },
+  {
+    title: 'Adoption-first examples',
+    body: 'Consumers are treated as onboarding assets that show wiring, tests, release shape and edge-case handling.',
+  },
+  {
+    title: 'One conceptual language',
+    body: 'UseCase, ChainUseCase, SequenceUseCase and GuardUseCase stay consistent across docs, support and releases.',
+  },
+]
+
+export const marketingHighlights = [
+  'Reduce orchestration drift between product teams and platform teams.',
+  'Make business flow explicit instead of burying it in controller conditionals.',
+  'Create examples and docs that transfer cleanly across technologies.',
+]
+
+export const contactLinks = [
+  {
+    label: 'Email',
+    value: 'animalab.desenvolvimento@gmail.com',
+    href: 'mailto:animalab.desenvolvimento@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    value: 'animalab-netizen',
+    href: 'https://github.com/animalab-netizen',
+  },
+  {
+    label: 'Website repo',
+    value: 'ode-website',
+    href: 'https://github.com/animalab-netizen/ode-website',
+  },
+]
