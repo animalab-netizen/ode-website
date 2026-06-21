@@ -407,6 +407,72 @@ a {
   color: var(--accent);
 }
 
+.inline-button {
+  display: inline-flex;
+  margin-top: 18px;
+}
+
+.snippet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.snippet-card,
+.docs-article {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.snippet-card h3,
+.docs-article h2 {
+  margin: 0 0 12px;
+  font-size: 1.7rem;
+}
+
+.snippet-card pre {
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+  border-radius: 20px;
+  background: #04101d;
+  border: 1px solid rgba(119, 242, 197, 0.12);
+}
+
+.snippet-card code {
+  color: #dffcf4;
+  font: 500 0.9rem/1.7 "SFMono-Regular", "Menlo", "Consolas", monospace;
+}
+
+.docs-page-shell .hero {
+  align-items: start;
+}
+
+.docs-topic-list,
+.dense-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.docs-topic-list li,
+.dense-list li,
+.docs-article p {
+  color: var(--muted);
+  font: 500 1rem/1.7 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.docs-shell-wide {
+  grid-template-columns: 0.3fr 0.7fr;
+}
+
+.docs-article-list {
+  display: grid;
+  gap: 18px;
+}
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -440,7 +506,9 @@ a {
   .example-grid,
   .status-board,
   .highlight-list,
-  .contact-grid {
+  .contact-grid,
+  .snippet-grid,
+  .docs-shell-wide {
     grid-template-columns: 1fr;
   }
 

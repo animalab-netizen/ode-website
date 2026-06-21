@@ -107,6 +107,39 @@ export const docsTopics = [
   'Per-runtime release and publication notes',
 ]
 
+export const sniperExamples = [
+  {
+    title: 'Direct delivery',
+    runtime: 'TypeScript',
+    code: `class LoadSpotlightUseCase extends UseCase<string, PokemonSpotlight> {
+  async execute(name: string): Promise<Output<PokemonSpotlight>> {
+    const pokemon = await gateway.fetch(name)
+    return Outputs.value(pokemon)
+  }
+}`,
+  },
+  {
+    title: 'Guard before dispatch',
+    runtime: 'Kotlin',
+    code: `override fun guard(param: CompareRequest): Output<Nothing>? {
+    if (param.left == param.right) {
+        return ErrorOutput(IllegalArgumentException("Comparison requires distinct entries"))
+    }
+    return null
+}`,
+  },
+  {
+    title: 'Ordered sequence',
+    runtime: 'Swift',
+    code: `let sequence = StarterSequenceUseCase(
+    entries: ["bulbasaur", "charmander", "squirtle"],
+    gateway: gateway
+)
+
+viewModel.dispatch(sequence, into: .starterSequence)`,
+  },
+]
+
 export const examples = [
   {
     name: 'Android Consumer',
@@ -171,5 +204,66 @@ export const contactLinks = [
     label: 'Website repo',
     value: 'ode-website',
     href: 'https://github.com/animalab-netizen/ode-website',
+  },
+]
+
+export const docsSections = [
+  {
+    id: 'premise',
+    title: 'Premise',
+    body:
+      'ODE treats delivery logic as a first-class product artifact. Instead of diluting orchestration across presenters, controllers, fragments, view models and callbacks, it concentrates business flow in named use cases that can be read, tested and discussed directly.',
+    bullets: [
+      'The code should tell the product story, not just satisfy framework mechanics.',
+      'Business flow should be explicit enough to survive team rotation and platform expansion.',
+      'The same conceptual vocabulary should remain stable across runtimes.',
+    ],
+  },
+  {
+    id: 'objective',
+    title: 'Objective',
+    body:
+      'The objective is not to invent a new abstract meta-framework. The objective is to provide a disciplined execution vocabulary that keeps product commitments visible while remaining native to each ecosystem.',
+    bullets: [
+      'Use package managers native to each technology.',
+      'Publish examples that consume real released artifacts.',
+      'Keep docs, support and architecture language aligned across platforms.',
+    ],
+  },
+  {
+    id: 'paradigms',
+    title: 'Paradigms ODE pushes against',
+    body:
+      'ODE deliberately pushes against a few habits that are common in modern apps but harmful to readability and long-term product maintenance.',
+    bullets: [
+      'Hidden orchestration spread across UI layers.',
+      'Presenter or controller methods overloaded with branching and edge-case plumbing.',
+      'Examples that are visually polished but architecturally meaningless.',
+      'Documentation that changes its language between Android, iOS, web and backend implementations.',
+    ],
+  },
+  {
+    id: 'execution-model',
+    title: 'Execution model',
+    body:
+      'ODE organizes flows into direct, chained, sequenced and guarded execution models. Each model should exist because the product narrative demands it, not because the UI or transport layer happened to be convenient.',
+    bullets: [
+      'UseCase for a single request and a single semantic outcome.',
+      'ChainUseCase for two-step comparison or dependency-aware flow.',
+      'SequenceUseCase for ordered execution across three or more entries.',
+      'GuardUseCase for validation that must stop invalid work before execution begins.',
+    ],
+  },
+  {
+    id: 'adoption-path',
+    title: 'Adoption path',
+    body:
+      'ODE adoption should move from local proof, to showcase app, to package manager integration, to internal team guidelines. The consumer applications are not throwaway demos; they are the public proof of how the ecosystem is meant to be used.',
+    bullets: [
+      'Start with one consumer and one narrow product flow.',
+      'Extract the runtime into a publishable library.',
+      'Replace physical source references with public package dependencies.',
+      'Keep technical explanations identical across runtimes where the concept is identical.',
+    ],
   },
 ]

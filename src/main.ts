@@ -6,6 +6,7 @@ import {
   libraries,
   marketingHighlights,
   sections,
+  sniperExamples,
   valueProps,
 } from './content/site'
 
@@ -27,7 +28,7 @@ app.innerHTML = `
       <a class="brand" href="#hero">ODE</a>
       <nav class="topnav">
         <a href="#libraries">Libraries</a>
-        <a href="#docs">Docs</a>
+        <a href="./docs/">Docs</a>
         <a href="#examples">Examples</a>
         <a href="#release-status">Release Status</a>
       </nav>
@@ -48,7 +49,7 @@ app.innerHTML = `
             and package-native adoption across mobile, web and backend ecosystems.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#docs">Read the docs</a>
+            <a class="button primary" href="./docs/">Read the docs</a>
             <a class="button secondary" href="#libraries">Browse libraries</a>
             <a class="button ghost" href="#contact">Contact ÂnimaLab</a>
           </div>
@@ -105,6 +106,37 @@ app.innerHTML = `
         </div>
         <div class="highlight-list">
           ${marketingHighlights.map((item) => `<article class="highlight-item"><p>${item}</p></article>`).join('')}
+        </div>
+      </section>
+
+      <section class="section snippets-section" id="snippets">
+        <div class="section-heading">
+          <p class="eyebrow">Technical preview</p>
+          <h2>Short code snippets that show the ODE style without hiding the mechanics.</h2>
+          <p>
+            The landing should not try to be the full developer guide, but it should give enough
+            real code for an experienced engineer to understand the direction immediately.
+          </p>
+        </div>
+        <div class="snippet-grid">
+          ${sniperExamples
+            .map(
+              (snippet) => `
+                <article class="snippet-card">
+                  <div class="snippet-head">
+                    <div>
+                      <p class="runtime">${snippet.runtime}</p>
+                      <h3>${snippet.title}</h3>
+                    </div>
+                  </div>
+                  <pre><code>${snippet.code
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;')}</code></pre>
+                </article>
+              `,
+            )
+            .join('')}
         </div>
       </section>
 
@@ -167,11 +199,11 @@ app.innerHTML = `
 
       <section class="section docs-layout" id="docs">
         <div class="section-heading">
-          <p class="eyebrow">Docs</p>
-          <h2>A documentation shell that serves both adoption and support.</h2>
+          <p class="eyebrow">Developer docs</p>
+          <h2>The dense material belongs in a dedicated docs surface, not only on the landing.</h2>
           <p>
-            The docs site should explain the conceptual contract once and then show how each
-            runtime maps it to platform-native code.
+            The landing introduces ODE. The docs area should carry the technical argument:
+            concept, objective, broken paradigms, execution model and adoption path.
           </p>
         </div>
         <div class="docs-shell">
@@ -183,16 +215,16 @@ app.innerHTML = `
           </aside>
           <article class="docs-preview">
             <p class="eyebrow">Docs strategy</p>
-            <h3>Concept first, runtime second.</h3>
+            <h3>Reserved, practical and developer-facing.</h3>
             <p>
-              The central docs should define the ODE vocabulary once, then branch into
-              Kotlin, Swift, TypeScript, .NET and Python setup notes without changing the
-              explanatory narrative between platforms.
+              The central docs should define the ODE vocabulary once, then branch into runtime
+              setup notes without changing the conceptual explanation between technologies.
             </p>
             <p>
-              That keeps support, release notes and community examples aligned with the same
-              mental model instead of duplicating divergent documentation trees.
+              Put the dense material in a standalone docs page so engineers can study the
+              architecture without the marketing surface getting overloaded.
             </p>
+            <a class="button secondary inline-button" href="./docs/">Open developer docs</a>
           </article>
         </div>
       </section>
