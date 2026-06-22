@@ -57,8 +57,8 @@ app.innerHTML = `
         <div class="hero-panel">
           <div class="signal-card">
             <span class="signal-title">Ecosystem signals</span>
-            <strong>5 runtimes</strong>
-            <p>Native Kotlin, Swift, TypeScript, .NET and Python expressions of ODE.</p>
+            <strong>10 runtimes</strong>
+            <p>Native Kotlin, Swift, TypeScript, .NET, Python, Go, Java, Ruby, PHP and Dart expressions of ODE.</p>
           </div>
           <div class="mode-grid">
             <article>
@@ -277,6 +277,11 @@ app.innerHTML = `
             <ul>
               <li>kotlin-ode on Maven Central</li>
               <li>dotnet-ode on NuGet</li>
+              <li>go-ode awaiting public module release</li>
+              <li>java-ode awaiting Maven publication</li>
+              <li>ruby-ode awaiting RubyGems publication</li>
+              <li>php-ode awaiting Packagist publication</li>
+              <li>dart-ode awaiting pub.dev publication</li>
             </ul>
           </div>
         </div>

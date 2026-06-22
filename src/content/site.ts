@@ -72,6 +72,66 @@ export const libraries: LibraryEntry[] = [
     example: 'dotnet-ode-consumer',
     blocker: 'First release has not been published to NuGet yet.',
   },
+  {
+    name: 'go-ode',
+    runtime: 'Go',
+    registry: 'Go modules',
+    version: 'pending',
+    status: 'pending',
+    summary: 'Backend-oriented Go runtime already scaffolded and locally validated, pending public repository release flow.',
+    repositoryUrl: 'https://github.com/animalab-netizen/go-ode',
+    packageUrl: 'https://pkg.go.dev/',
+    example: 'go-ode-consumer',
+    blocker: 'Repository publication and public semantic tags are still pending.',
+  },
+  {
+    name: 'java-ode',
+    runtime: 'Java',
+    registry: 'Maven Central',
+    version: 'pending',
+    status: 'pending',
+    summary: 'JVM-oriented Java runtime scaffolded and validated through javac/java, awaiting repository and registry publication.',
+    repositoryUrl: 'https://github.com/animalab-netizen/java-ode',
+    packageUrl: 'https://central.sonatype.com/',
+    example: 'java-ode-consumer',
+    blocker: 'No public release has been published yet.',
+  },
+  {
+    name: 'ruby-ode',
+    runtime: 'Ruby',
+    registry: 'RubyGems',
+    version: 'pending',
+    status: 'pending',
+    summary: 'Ruby gem runtime and backend showcase are scaffolded and validated locally, pending gem publication.',
+    repositoryUrl: 'https://github.com/animalab-netizen/ruby-ode',
+    packageUrl: 'https://rubygems.org/',
+    example: 'ruby-ode-consumer',
+    blocker: 'Gem has not been published to RubyGems yet.',
+  },
+  {
+    name: 'php-ode',
+    runtime: 'PHP',
+    registry: 'Packagist',
+    version: 'pending',
+    status: 'pending',
+    summary: 'Composer-first PHP runtime and web showcase are scaffolded and now validated locally, pending Packagist publication.',
+    repositoryUrl: 'https://github.com/animalab-netizen/php-ode',
+    packageUrl: 'https://packagist.org/',
+    example: 'php-ode-consumer',
+    blocker: 'Package metadata is ready, but the public repository and Packagist release are still pending.',
+  },
+  {
+    name: 'dart-ode',
+    runtime: 'Dart',
+    registry: 'pub.dev',
+    version: 'pending',
+    status: 'pending',
+    summary: 'Dart runtime is scaffolded and validated, and its Flutter consumer is also running under local test, pending pub.dev publication.',
+    repositoryUrl: 'https://github.com/animalab-netizen/dart-ode',
+    packageUrl: 'https://pub.dev/',
+    example: 'dart-ode-consumer',
+    blocker: 'The package has not yet been published to pub.dev.',
+  },
 ]
 
 export const sections = [
@@ -87,7 +147,7 @@ export const sections = [
     eyebrow: 'Execution Modes',
     title: 'Readable business orchestration instead of hidden controller logic.',
     body:
-      'Every runtime is shaped around the same four concepts so examples, docs and support material stay aligned across Android, iOS, web, .NET and Python.',
+      'Every runtime is shaped around the same four concepts so examples, docs and support material stay aligned across mobile, web, backend and JVM ecosystems.',
   },
   {
     id: 'adoption',
@@ -166,6 +226,31 @@ export const examples = [
     stack: 'Standard library web showcase',
     emphasis: 'Lightweight example of ODE orchestration in backend-friendly Python.',
   },
+  {
+    name: 'Go Consumer',
+    stack: 'Go + HTTP server',
+    emphasis: 'Backend showcase with explicit direct, chain, sequence and guard-oriented endpoints.',
+  },
+  {
+    name: 'Java Consumer',
+    stack: 'Java + HttpServer',
+    emphasis: 'Backend JVM showcase that keeps the ODE vocabulary explicit without framework-heavy indirection.',
+  },
+  {
+    name: 'Ruby Consumer',
+    stack: 'Ruby + WEBrick',
+    emphasis: 'Backend showcase for gem-style adoption with the same delivery narrative.',
+  },
+  {
+    name: 'PHP Consumer',
+    stack: 'PHP + built-in web server',
+    emphasis: 'Web showcase proving the ODE vocabulary in a lightweight Composer-oriented stack.',
+  },
+  {
+    name: 'Dart Consumer',
+    stack: 'Flutter mobile + web',
+    emphasis: 'Cross-surface showcase that now validates both the Dart runtime and Flutter consumer flow.',
+  },
 ]
 
 export const valueProps = [
@@ -187,6 +272,7 @@ export const marketingHighlights = [
   'Reduce orchestration drift between product teams and platform teams.',
   'Make business flow explicit instead of burying it in controller conditionals.',
   'Create examples and docs that transfer cleanly across technologies.',
+  'Grow one conceptual architecture across mobile, web, backend and JVM targets.',
 ]
 
 export const contactLinks = [
