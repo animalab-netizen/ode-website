@@ -293,6 +293,46 @@ export const contactLinks = [
   },
 ]
 
+export const roadmapBuckets = [
+  {
+    stage: 'Now',
+    items: [
+      'Stabilize and publish the runtimes that are already validated locally.',
+      'Keep consumer examples aligned with package-manager adoption paths.',
+      'Use the website as the single public truth for release readiness.',
+    ],
+  },
+  {
+    stage: 'Next',
+    items: [
+      'Publish go-ode, java-ode, ruby-ode, php-ode and dart-ode through their public registries.',
+      'Create dedicated remote repositories for the consumer showcase apps.',
+      'Expand the dense technical docs per runtime without changing the conceptual narrative.',
+    ],
+  },
+  {
+    stage: 'Later',
+    items: [
+      'Add more runtimes where the ODE vocabulary translates cleanly.',
+      'Strengthen community support and contribution paths around the public portal.',
+      'Use examples as compatibility proofs for every official release line.',
+    ],
+  },
+]
+
+export const technologyMatrix = [
+  ['Kotlin', 'Library + consumer', 'Yes', 'Maven Central pending'],
+  ['Swift', 'Library + consumer', 'Yes', 'CocoaPods published'],
+  ['TypeScript', 'Library + consumer', 'Yes', 'npm published'],
+  ['.NET', 'Library + consumer', 'Yes', 'NuGet pending'],
+  ['Python', 'Library + consumer', 'Yes', 'PyPI partially live'],
+  ['Go', 'Library + consumer', 'Yes', 'Pending public module release'],
+  ['Java', 'Library + consumer', 'Yes', 'Pending Maven publication'],
+  ['Ruby', 'Library + consumer', 'Yes', 'Pending RubyGems publication'],
+  ['PHP', 'Library + consumer', 'Yes', 'Pending Packagist publication'],
+  ['Dart', 'Library + consumer', 'Yes', 'Pending pub.dev publication'],
+]
+
 export const docsSections = [
   {
     id: 'premise',

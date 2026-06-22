@@ -419,7 +419,9 @@ a {
 }
 
 .snippet-card,
-.docs-article {
+.docs-article,
+.matrix-card,
+.roadmap-card {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -473,6 +475,38 @@ a {
   gap: 18px;
 }
 
+.matrix-card {
+  overflow-x: auto;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font: 500 0.98rem/1.6 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--muted);
+}
+
+.matrix-table th {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -508,7 +542,8 @@ a {
   .highlight-list,
   .contact-grid,
   .snippet-grid,
-  .docs-shell-wide {
+  .docs-shell-wide,
+  .roadmap-grid {
     grid-template-columns: 1fr;
   }
 

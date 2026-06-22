@@ -5,8 +5,10 @@ import {
   examples,
   libraries,
   marketingHighlights,
+  roadmapBuckets,
   sections,
   sniperExamples,
+  technologyMatrix,
   valueProps,
 } from './content/site'
 
@@ -30,6 +32,7 @@ app.innerHTML = `
         <a href="#libraries">Libraries</a>
         <a href="./docs/">Docs</a>
         <a href="#examples">Examples</a>
+        <a href="#matrix">Matrix</a>
         <a href="#release-status">Release Status</a>
       </nav>
     </header>
@@ -246,6 +249,68 @@ app.innerHTML = `
                   <p class="runtime">${example.stack}</p>
                   <h3>${example.name}</h3>
                   <p>${example.emphasis}</p>
+                </article>
+              `,
+            )
+            .join('')}
+        </div>
+      </section>
+
+      <section class="section" id="matrix">
+        <div class="section-heading">
+          <p class="eyebrow">Technology Matrix</p>
+          <h2>One public view of what exists, what is validated and what is still pending.</h2>
+          <p>
+            The matrix is meant to help adopters, maintainers and partners understand the
+            practical maturity of each ODE runtime without digging through every repository.
+          </p>
+        </div>
+        <div class="matrix-card">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Shape</th>
+                <th>Local validation</th>
+                <th>Registry status</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${technologyMatrix
+                .map(
+                  (row) => `
+                    <tr>
+                      <td>${row[0]}</td>
+                      <td>${row[1]}</td>
+                      <td>${row[2]}</td>
+                      <td>${row[3]}</td>
+                    </tr>
+                  `,
+                )
+                .join('')}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section roadmap-section" id="roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">Roadmap</p>
+          <h2>Now, next and later should remain visible to the public.</h2>
+          <p>
+            ODE is growing as an ecosystem. The roadmap needs to explain where the project is
+            investing today, what is coming next and which ideas are deliberately deferred.
+          </p>
+        </div>
+        <div class="roadmap-grid">
+          ${roadmapBuckets
+            .map(
+              (bucket) => `
+                <article class="roadmap-card">
+                  <p class="eyebrow">${bucket.stage}</p>
+                  <ul class="dense-list">
+                    ${bucket.items.map((item) => `<li>${item}</li>`).join('')}
+                  </ul>
                 </article>
               `,
             )
